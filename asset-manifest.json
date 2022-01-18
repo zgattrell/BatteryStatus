@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/BatteryStatus/static/css/main.ae072b45.css",
+    "main.js": "/BatteryStatus/static/js/main.cafe158d.js",
+    "static/js/787.bbfde2b2.chunk.js": "/BatteryStatus/static/js/787.bbfde2b2.chunk.js",
+    "static/media/logo.svg": "/BatteryStatus/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/BatteryStatus/index.html",
+    "main.ae072b45.css.map": "/BatteryStatus/static/css/main.ae072b45.css.map",
+    "main.cafe158d.js.map": "/BatteryStatus/static/js/main.cafe158d.js.map",
+    "787.bbfde2b2.chunk.js.map": "/BatteryStatus/static/js/787.bbfde2b2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ae072b45.css",
+    "static/js/main.cafe158d.js"
+  ]
+}
