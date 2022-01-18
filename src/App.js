@@ -1,23 +1,35 @@
 import logo from './logo.svg';
 import './App.css';
+import {React, useState} from 'react';
 
 function App() {
+  const [powerLevel, setPowerLevel] = useState(0);
+  const [powerStatus, setPowerStatus] = useState('high');
+  const [charging, setCharging] = useState('true');
+
+  const batteryLevel = navigator.getBattery().then((result) => {
+    setPowerLevel(Math.ceil(result.level * 100));
+    let powerStat = 'high';
+    if(powerLevel < 80 && powerLevel > 20) powerStat = 'med';
+    if(powerLevel < 20) powerStat = 'low';
+    setPowerStatus(powerStat);
+    setCharging(result.charging);
+    result.onchargingchange = () => {
+      setCharging(!charging);
+    };
+  });
+
+  let batteryLvlClass = 'battery-level ' + powerStatus;
+  let batIcon = <img className="batIcon" src="https://cdn4.iconfinder.com/data/icons/nature-2-10/32/155-512.png" width="80px" />;
+  if(!charging) batIcon = '';
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="battery">
+        <div className={batteryLvlClass} style={{width: powerLevel + '%'}}>
+        </div>
+      </div>
+      {batIcon}
     </div>
   );
 }

@@ -11,3 +11,50 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.battery:after {
+  background-color: #fff;
+  border: 6px solid #000;
+  content: "";
+  display: block;
+  height: 48px;
+  position: absolute;
+  right: -18px;
+  top: 18px;
+  width: 18px;
+  border-radius: 5px;
+}
+.battery {
+  margin-top: 20%;
+  background-color: #fff;
+  border: 6px solid #000;
+  height: 96px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  width: 300px;
+  border-radius: 5px;
+}
+
+.battery .battery-level {
+  background-color: #666;
+  height: 100%;
+  text-align: center;
+  padding: auto;
+}
+
+.battery .battery-level.high {
+  background-color: green;
+}
+
+.battery .battery-level.low {
+  background-color: red;
+}
+
+.battery .battery-level.med {
+  background-color: gray;
+}
+
+.batIcon {
+  margin-top: 25px;
+}
